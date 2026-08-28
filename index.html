@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List - Simple &amp; Fast</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✅</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <!-- Header -->
+    <header class="app__header">
+      <h1 class="app__title">My Tasks</h1>
+      <p class="app__subtitle" id="date-display"></p>
+    </header>
+
+    <!-- Add task form -->
+    <form class="add-form" id="add-form" autocomplete="off">
+      <input
+        type="text"
+        id="task-input"
+        class="add-form__input"
+        placeholder="What needs to be done?"
+        maxlength="120"
+        aria-label="New task"
+      />
+      <button type="submit" class="add-form__button">Add</button>
+    </form>
+
+    <!-- Filter tabs -->
+    <div class="filters" role="tablist" aria-label="Filter tasks">
+      <button class="filters__tab is-active" data-filter="all" role="tab">All</button>
+      <button class="filters__tab" data-filter="active" role="tab">Active</button>
+      <button class="filters__tab" data-filter="completed" role="tab">Done</button>
+    </div>
+
+    <!-- Task list -->
+    <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="empty-state">
+      <p class="empty-state__icon">📝</p>
+      <p class="empty-state__text" id="empty-state-text">No tasks yet. Add your first one!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app__footer">
+      <span id="counter">0 tasks left</span>
+      <div class="app__footer-actions">
+        <button class="link-btn" id="clear-completed" type="button">Clear done</button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
